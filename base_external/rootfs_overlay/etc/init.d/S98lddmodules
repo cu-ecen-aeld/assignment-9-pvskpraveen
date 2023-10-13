@@ -8,6 +8,8 @@ case "$1" in
 		module_load faulty
 		echo "starting hello"
 		modprobe hello
+		echo "Starting aesdchar"
+		aesdchar_load
 		;;
 	
 	stop)
@@ -17,6 +19,8 @@ case "$1" in
 		module_unload faulty
 		echo "Stopping hello"
 		scull_unload
+		echo "Stopping aesdchar"
+		aesdchar_unload
 		;;
 	*)
 		echo "Usage: $0 {start|stop}"
